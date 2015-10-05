@@ -3,11 +3,9 @@
  */
 
 
-THREE.PointLight = function ( color, intensity, distance, decay ) {
+THREE.PointLight = function PointLight ( color, intensity, distance, decay ) {
 
 	THREE.Light.call( this, color );
-
-	this.type = 'PointLight';
 
 	this.intensity = ( intensity !== undefined ) ? intensity : 1;
 	this.distance = ( distance !== undefined ) ? distance : 0;

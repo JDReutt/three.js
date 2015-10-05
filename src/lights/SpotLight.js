@@ -2,11 +2,9 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.SpotLight = function ( color, intensity, distance, angle, exponent, decay ) {
+THREE.SpotLight = function SpotLight ( color, intensity, distance, angle, exponent, decay ) {
 
 	THREE.Light.call( this, color );
-
-	this.type = 'SpotLight';
 
 	this.position.set( 0, 1, 0 );
 	this.updateMatrix();

@@ -56,11 +56,9 @@
  * }
  */
 
-THREE.MeshPhongMaterial = function ( parameters ) {
+THREE.MeshPhongMaterial = function MeshPhongMaterial ( parameters ) {
 
 	THREE.Material.call( this );
-
-	this.type = 'MeshPhongMaterial';
 
 	this.color = new THREE.Color( 0xffffff ); // diffuse
 	this.emissive = new THREE.Color( 0x000000 );

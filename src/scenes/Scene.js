@@ -2,11 +2,9 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.Scene = function () {
+THREE.Scene = function Scene () {
 
 	THREE.Object3D.call( this );
-
-	this.type = 'Scene';
 
 	this.fog = null;
 	this.overrideMaterial = null;

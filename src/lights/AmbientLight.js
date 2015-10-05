@@ -2,11 +2,9 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.AmbientLight = function ( color ) {
+THREE.AmbientLight = function AmbientLight ( color ) {
 
 	THREE.Light.call( this, color );
-
-	this.type = 'AmbientLight';
 
 };
 

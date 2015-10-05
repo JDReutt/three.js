@@ -2,14 +2,13 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.DirectGeometry = function () {
+THREE.DirectGeometry = function DirectGeometry () {
 
 	Object.defineProperty( this, 'id', { value: THREE.GeometryIdCount ++ } );
 
 	this.uuid = THREE.Math.generateUUID();
 
 	this.name = '';
-	this.type = 'DirectGeometry';
 
 	this.indices = [];
 	this.vertices = [];

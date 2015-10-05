@@ -12,11 +12,9 @@
  * http://www.cs.indiana.edu/pub/techreports/TR425.pdf
  */
 
-THREE.TubeGeometry = function ( path, segments, radius, radialSegments, closed, taper ) {
+THREE.TubeGeometry = function TubeGeometry ( path, segments, radius, radialSegments, closed, taper ) {
 
 	THREE.Geometry.call( this );
-
-	this.type = 'TubeGeometry';
 
 	this.parameters = {
 		path: path,

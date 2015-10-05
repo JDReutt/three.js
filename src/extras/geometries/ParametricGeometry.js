@@ -7,11 +7,9 @@
  *
  */
 
-THREE.ParametricGeometry = function ( func, slices, stacks ) {
+THREE.ParametricGeometry = function ParametricGeometry ( func, slices, stacks ) {
 
 	THREE.Geometry.call( this );
-
-	this.type = 'ParametricGeometry';
 
 	this.parameters = {
 		func: func,

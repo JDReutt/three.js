@@ -2,11 +2,9 @@
  * @author Kaleb Murphy
  */
 
-THREE.RingGeometry = function ( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength ) {
+THREE.RingGeometry = function RingGeometry ( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength ) {
 
 	THREE.Geometry.call( this );
-
-	this.type = 'RingGeometry';
 
 	this.parameters = {
 		innerRadius: innerRadius,

@@ -2,11 +2,9 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.RawShaderMaterial = function ( parameters ) {
+THREE.RawShaderMaterial = function RawShaderMaterial ( parameters ) {
 
 	THREE.ShaderMaterial.call( this, parameters );
-
-	this.type = 'RawShaderMaterial';
 
 };
 

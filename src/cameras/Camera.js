@@ -4,11 +4,9 @@
  * @author WestLangley / http://github.com/WestLangley
 */
 
-THREE.Camera = function () {
+THREE.Camera = function Camera () {
 
 	THREE.Object3D.call( this );
-
-	this.type = 'Camera';
 
 	this.matrixWorldInverse = new THREE.Matrix4();
 	this.projectionMatrix = new THREE.Matrix4();

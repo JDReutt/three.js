@@ -14,11 +14,9 @@ THREE.Sprite = ( function () {
 	geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 	geometry.addAttribute( 'uv', new THREE.BufferAttribute( uvs, 2 ) );
 
-	return function Sprite( material ) {
+	return function Sprite ( material ) {
 
 		THREE.Object3D.call( this );
-
-		this.type = 'Sprite';
 
 		this.geometry = geometry;
 		this.material = ( material !== undefined ) ? material : new THREE.SpriteMaterial();

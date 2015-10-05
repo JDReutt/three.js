@@ -5,11 +5,9 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.CubeCamera = function ( near, far, cubeResolution ) {
+THREE.CubeCamera = function CubeCamera ( near, far, cubeResolution ) {
 
 	THREE.Object3D.call( this );
-
-	this.type = 'CubeCamera';
 
 	var fov = 90, aspect = 1;
 

@@ -4,11 +4,9 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.LOD = function () {
+THREE.LOD = function LOD () {
 
 	THREE.Object3D.call( this );
-
-	this.type = 'LOD';
 
 	Object.defineProperties( this, {
 		levels: {

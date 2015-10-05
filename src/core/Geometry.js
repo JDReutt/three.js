@@ -7,14 +7,13 @@
  * @author bhouston / http://clara.io
  */
 
-THREE.Geometry = function () {
+THREE.Geometry = function Geometry () {
 
 	Object.defineProperty( this, 'id', { value: THREE.GeometryIdCount ++ } );
 
 	this.uuid = THREE.Math.generateUUID();
 
 	this.name = '';
-	this.type = 'Geometry';
 
 	this.vertices = [];
 	this.colors = [];
@@ -923,7 +922,7 @@ THREE.Geometry.prototype = {
 		// standard Geometry serialization
 
 		data.uuid = this.uuid;
-		data.type = this.type;
+		data.type = this.constructor.name;
 		if ( this.name !== '' ) data.name = this.name;
 
 		if ( this.parameters !== undefined ) {

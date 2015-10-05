@@ -2,11 +2,9 @@
  * @author benaadams / https://twitter.com/ben_a_adams
  */
 
-THREE.CircleBufferGeometry = function ( radius, segments, thetaStart, thetaLength ) {
+THREE.CircleBufferGeometry = function CircleBufferGeometry ( radius, segments, thetaStart, thetaLength ) {
 
 	THREE.BufferGeometry.call( this );
-
-	this.type = 'CircleBufferGeometry';
 
 	this.parameters = {
 		radius: radius,

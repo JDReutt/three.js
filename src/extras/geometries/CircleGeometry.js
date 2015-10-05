@@ -2,11 +2,9 @@
  * @author hughes
  */
 
-THREE.CircleGeometry = function ( radius, segments, thetaStart, thetaLength ) {
+THREE.CircleGeometry = function CircleGeometry ( radius, segments, thetaStart, thetaLength ) {
 
 	THREE.Geometry.call( this );
-
-	this.type = 'CircleGeometry';
 
 	this.parameters = {
 		radius: radius,

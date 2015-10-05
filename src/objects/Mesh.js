@@ -5,11 +5,9 @@
  * @author jonobr1 / http://jonobr1.com/
  */
 
-THREE.Mesh = function ( geometry, material ) {
+THREE.Mesh = function Mesh ( geometry, material ) {
 
 	THREE.Object3D.call( this );
-
-	this.type = 'Mesh';
 
 	this.geometry = geometry !== undefined ? geometry : new THREE.Geometry();
 	this.material = material !== undefined ? material : new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff } );

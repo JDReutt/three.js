@@ -36,7 +36,7 @@
 */
 
 
-THREE.TextGeometry = function ( text, parameters ) {
+THREE.TextGeometry = function TextGeometry ( text, parameters ) {
 
 	parameters = parameters || {};
 
@@ -53,8 +53,6 @@ THREE.TextGeometry = function ( text, parameters ) {
 	if ( parameters.bevelEnabled === undefined ) parameters.bevelEnabled = false;
 
 	THREE.ExtrudeGeometry.call( this, textShapes, parameters );
-
-	this.type = 'TextGeometry';
 
 };
 
