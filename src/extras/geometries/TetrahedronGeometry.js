@@ -2,7 +2,7 @@
  * @author timothypratley / https://github.com/timothypratley
  */
 
-THREE.TetrahedronGeometry = function ( radius, detail ) {
+THREE.TetrahedronGeometry = function TetrahedronGeometry ( radius, detail ) {
 
 	var vertices = [
 		 1,  1,  1,   - 1, - 1,  1,   - 1,  1, - 1,    1, - 1, - 1
@@ -13,8 +13,6 @@ THREE.TetrahedronGeometry = function ( radius, detail ) {
 	];
 
 	THREE.PolyhedronGeometry.call( this, vertices, indices, radius, detail );
-
-	this.type = 'TetrahedronGeometry';
 
 	this.parameters = {
 		radius: radius,

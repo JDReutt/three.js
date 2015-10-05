@@ -14,11 +14,9 @@
  * }
  */
 
-THREE.MeshDepthMaterial = function ( parameters ) {
+THREE.MeshDepthMaterial = function MeshDepthMaterial ( parameters ) {
 
 	THREE.Material.call( this );
-
-	this.type = 'MeshDepthMaterial';
 
 	this.morphTargets = false;
 	this.wireframe = false;

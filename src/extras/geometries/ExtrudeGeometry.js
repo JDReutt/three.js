@@ -22,7 +22,7 @@
  * }
  **/
 
-THREE.ExtrudeGeometry = function ( shapes, options ) {
+THREE.ExtrudeGeometry = function ExtrudeGeometry ( shapes, options ) {
 
 	if ( typeof( shapes ) === "undefined" ) {
 
@@ -32,8 +32,6 @@ THREE.ExtrudeGeometry = function ( shapes, options ) {
 	}
 
 	THREE.Geometry.call( this );
-
-	this.type = 'ExtrudeGeometry';
 
 	shapes = Array.isArray( shapes ) ? shapes : [ shapes ];
 

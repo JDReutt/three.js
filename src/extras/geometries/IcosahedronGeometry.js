@@ -2,7 +2,7 @@
  * @author timothypratley / https://github.com/timothypratley
  */
 
-THREE.IcosahedronGeometry = function ( radius, detail ) {
+THREE.IcosahedronGeometry = function IcosahedronGeometry ( radius, detail ) {
 
 	var t = ( 1 + Math.sqrt( 5 ) ) / 2;
 
@@ -20,8 +20,6 @@ THREE.IcosahedronGeometry = function ( radius, detail ) {
 	];
 
 	THREE.PolyhedronGeometry.call( this, vertices, indices, radius, detail );
-
-	this.type = 'IcosahedronGeometry';
 
 	this.parameters = {
 		radius: radius,

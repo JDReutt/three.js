@@ -3,11 +3,9 @@
  * based on http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Plane.as
  */
 
-THREE.PlaneBufferGeometry = function ( width, height, widthSegments, heightSegments ) {
+THREE.PlaneBufferGeometry = function PlaneBufferGeometry ( width, height, widthSegments, heightSegments ) {
 
 	THREE.BufferGeometry.call( this );
-
-	this.type = 'PlaneBufferGeometry';
 
 	this.parameters = {
 		width: width,

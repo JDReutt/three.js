@@ -4,11 +4,9 @@
  * @author ikerr / http://verold.com
  */
 
-THREE.Bone = function ( skin ) {
+THREE.Bone = function Bone ( skin ) {
 
 	THREE.Object3D.call( this );
-
-	this.type = 'Bone';
 
 	this.skin = skin;
 
@@ -18,11 +16,11 @@ THREE.Bone.prototype = Object.create( THREE.Object3D.prototype );
 THREE.Bone.prototype.constructor = THREE.Bone;
 
 THREE.Bone.prototype.copy = function ( source ) {
-	
+
 	THREE.Object3D.prototype.copy.call( this, source );
-	
+
 	this.skin = source.skin;
-	
+
 	return this;
 
 };

@@ -2,11 +2,9 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.SpriteCanvasMaterial = function ( parameters ) {
+THREE.SpriteCanvasMaterial = function SpriteCanvasMaterial ( parameters ) {
 
 	THREE.Material.call( this );
-
-	this.type = 'SpriteCanvasMaterial';
 
 	this.color = new THREE.Color( 0xffffff );
 	this.program = function ( context, color ) {};
@@ -32,7 +30,7 @@ THREE.SpriteCanvasMaterial.prototype.clone = function () {
 
 //
 
-THREE.CanvasRenderer = function ( parameters ) {
+THREE.CanvasRenderer = function CanvasRenderer ( parameters ) {
 
 	console.log( 'THREE.CanvasRenderer', THREE.REVISION );
 

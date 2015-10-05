@@ -14,11 +14,9 @@
  * }
  **/
 
-THREE.ShapeGeometry = function ( shapes, options ) {
+THREE.ShapeGeometry = function ShapeGeometry ( shapes, options ) {
 
 	THREE.Geometry.call( this );
-
-	this.type = 'ShapeGeometry';
 
 	if ( Array.isArray( shapes ) === false ) shapes = [ shapes ];
 

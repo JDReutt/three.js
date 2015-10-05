@@ -21,11 +21,9 @@
  * }
  */
 
-THREE.LineDashedMaterial = function ( parameters ) {
+THREE.LineDashedMaterial = function LineDashedMaterial ( parameters ) {
 
 	THREE.Material.call( this );
-
-	this.type = 'LineDashedMaterial';
 
 	this.color = new THREE.Color( 0xffffff );
 
@@ -51,7 +49,7 @@ THREE.LineDashedMaterial.prototype.copy = function ( source ) {
 	THREE.Material.prototype.copy.call( this, source );
 
 	this.color.copy( source.color );
-	
+
 	this.linewidth = source.linewidth;
 
 	this.scale = source.scale;

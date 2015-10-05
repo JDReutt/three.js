@@ -35,11 +35,9 @@
  * }
  */
 
-THREE.MeshLambertMaterial = function ( parameters ) {
+THREE.MeshLambertMaterial = function MeshLambertMaterial ( parameters ) {
 
 	THREE.Material.call( this );
-
-	this.type = 'MeshLambertMaterial';
 
 	this.color = new THREE.Color( 0xffffff ); // diffuse
 	this.emissive = new THREE.Color( 0x000000 );

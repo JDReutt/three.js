@@ -1,4 +1,4 @@
-THREE.WebGLPrograms = function ( renderer, capabilities ) {
+THREE.WebGLPrograms = function WebGLPrograms ( renderer, capabilities ) {
 
 	var programs = [];
 
@@ -20,7 +20,7 @@ THREE.WebGLPrograms = function ( renderer, capabilities ) {
 		"flatShading", "sizeAttenuation", "logarithmicDepthBuffer", "skinning",
 		"maxBones", "useVertexTexture", "morphTargets", "morphNormals",
 		"maxMorphTargets", "maxMorphNormals", "maxDirLights", "maxPointLights",
-		"maxSpotLights", "maxHemiLights", "maxShadows", "shadowMapEnabled", "pointLightShadows", 
+		"maxSpotLights", "maxHemiLights", "maxShadows", "shadowMapEnabled", "pointLightShadows",
 		"shadowMapType", "shadowMapDebug", "alphaTest", "metal", "doubleSided",
 		"flipSided"
 	];
@@ -105,7 +105,7 @@ THREE.WebGLPrograms = function ( renderer, capabilities ) {
 				maxShadows ++;
 				pointLightShadows ++;
 
-			} 
+			}
 
 		}
 
@@ -115,7 +115,7 @@ THREE.WebGLPrograms = function ( renderer, capabilities ) {
 
 	this.getParameters = function ( material, lights, fog, object ) {
 
-		var shaderID = shaderIDs[ material.type ];
+		var shaderID = shaderIDs[ material.constructor.name ];
 		// heuristics to create shader parameters according to lights in the scene
 		// (not to blow over maxLights budget)
 

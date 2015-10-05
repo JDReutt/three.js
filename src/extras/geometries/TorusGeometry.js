@@ -4,11 +4,9 @@
  * based on http://code.google.com/p/away3d/source/browse/trunk/fp10/Away3DLite/src/away3dlite/primitives/Torus.as?r=2888
  */
 
-THREE.TorusGeometry = function ( radius, tube, radialSegments, tubularSegments, arc ) {
+THREE.TorusGeometry = function TorusGeometry ( radius, tube, radialSegments, tubularSegments, arc ) {
 
 	THREE.Geometry.call( this );
-
-	this.type = 'TorusGeometry';
 
 	this.parameters = {
 		radius: radius,

@@ -2,11 +2,10 @@
  * @author benaadams / https://twitter.com/ben_a_adams
  */
 
-THREE.InstancedBufferGeometry = function () {
+THREE.InstancedBufferGeometry = function InstancedBufferGeometry () {
 
 	THREE.BufferGeometry.call( this );
 
-	this.type = 'InstancedBufferGeometry';
 	this.maxInstancedCount = undefined;
 
 };

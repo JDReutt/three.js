@@ -4,11 +4,9 @@
  * @author ikerr / http://verold.com
  */
 
-THREE.SkinnedMesh = function ( geometry, material, useVertexTexture ) {
+THREE.SkinnedMesh = function SkinnedMesh ( geometry, material, useVertexTexture ) {
 
 	THREE.Mesh.call( this, geometry, material );
-
-	this.type = 'SkinnedMesh';
 
 	this.bindMode = "attached";
 	this.bindMatrix = new THREE.Matrix4();
@@ -75,7 +73,7 @@ THREE.SkinnedMesh.prototype.bind = function( skeleton, bindMatrix ) {
 	if ( bindMatrix === undefined ) {
 
 		this.updateMatrixWorld( true );
-		
+
 		this.skeleton.calculateInverses();
 
 		bindMatrix = this.matrixWorld;
