@@ -5,7 +5,7 @@
 // https://github.com/mrdoob/three.js/issues/5552
 // http://en.wikipedia.org/wiki/RGBE_image_format
 
-THREE.HDRLoader = THREE.RGBELoader = function HDRLoader ( manager ) {
+THREE.RGBELoader = function RGBELoader( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
 
@@ -15,7 +15,7 @@ THREE.HDRLoader = THREE.RGBELoader = function HDRLoader ( manager ) {
 THREE.RGBELoader.prototype = Object.create( THREE.BinaryTextureLoader.prototype );
 
 // adapted from http://www.graphics.cornell.edu/~bjw/rgbe.html
-THREE.RGBELoader.prototype._parser = function( buffer ) {
+THREE.RGBELoader.prototype._parser = function ( buffer ) {
 
 	var
 		/* return codes for rgbe routines */
@@ -347,3 +347,5 @@ THREE.RGBELoader.prototype._parser = function( buffer ) {
 	return null;
 
 };
+
+THREE.HDRLoader = THREE.RGBELoader;

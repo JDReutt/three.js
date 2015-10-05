@@ -6,7 +6,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.QuaternionKeyframeTrack = function QuaternionKeyframeTrack ( name, keys ) {
+THREE.QuaternionKeyframeTrack = function QuaternionKeyframeTrack( name, keys ) {
 
 	THREE.KeyframeTrack.call( this, name, keys );
 

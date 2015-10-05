@@ -3,7 +3,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.WebGLShadowMap = function WebGLShadowMap ( _renderer, _lights, _objects ) {
+THREE.WebGLShadowMap = function WebGLShadowMap( _renderer, _lights, _objects ) {
 
 	var _gl = _renderer.context,
 	_state = _renderer.state,

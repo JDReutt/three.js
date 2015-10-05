@@ -13,7 +13,7 @@
  *	NURBS curve
  **************************************************************/
 
-THREE.NURBSCurve = function NURBSCurve ( degree, knots /* array of reals */, controlPoints /* array of Vector(2|3|4) */ ) {
+THREE.NURBSCurve = function NURBSCurve( degree, knots /* array of reals */, controlPoints /* array of Vector(2|3|4) */ ) {
 
 	this.degree = degree;
 	this.knots = knots;

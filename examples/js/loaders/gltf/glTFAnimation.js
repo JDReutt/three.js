@@ -2,7 +2,7 @@
  * @author Tony Parisi / http://www.tonyparisi.com/
  */
 
-THREE.glTFAnimator = ( function glTFAnimator () {
+THREE.glTFAnimator = ( function () {
 
 	var animators = [];
 
@@ -33,7 +33,7 @@ THREE.glTFAnimator = ( function glTFAnimator () {
 })();
 
 // Construction/initialization
-THREE.glTFAnimation = function glTFAnimation (interps)
+THREE.glTFAnimation = function(interps)
 {
 	this.running = false;
 	this.loop = false;
@@ -109,7 +109,7 @@ THREE.glTFAnimation.prototype.update = function()
 
 //Interpolator class
 //Construction/initialization
-THREE.glTFInterpolator = function glTFInterpolator (param)
+THREE.glTFInterpolator = function(param)
 {
 	this.keys = param.keys;
 	this.values = param.values;

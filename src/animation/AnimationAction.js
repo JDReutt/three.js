@@ -6,7 +6,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.AnimationAction = function AnimationAction ( clip, startTime, timeScale, weight, loop ) {
+THREE.AnimationAction = function AnimationAction( clip, startTime, timeScale, weight, loop ) {
 
 	if( clip === undefined ) throw new Error( 'clip is null' );
 	this.clip = clip;

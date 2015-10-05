@@ -17,7 +17,7 @@
  *     50           107
  */
 
-THREE.ConvexGeometry = function ConvexGeometry ( vertices ) {
+THREE.ConvexGeometry = function ConvexGeometry( vertices ) {
 
 	THREE.Geometry.call( this );
 

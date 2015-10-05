@@ -27,7 +27,7 @@
  */
 
 
-THREE.PLYLoader = function PLYLoader ( manager ) {
+THREE.PLYLoader = function PLYLoader( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
 

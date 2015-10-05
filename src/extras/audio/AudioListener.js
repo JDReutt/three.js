@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.AudioListener = function AudioListener () {
+THREE.AudioListener = function AudioListener() {
 
 	THREE.Object3D.call( this );
 

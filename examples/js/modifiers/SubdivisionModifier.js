@@ -15,7 +15,7 @@
  *
  */
 
-THREE.SubdivisionModifier = function SubdivisionModifier ( subdivisions ) {
+THREE.SubdivisionModifier = function SubdivisionModifier( subdivisions ) {
 
 	this.subdivisions = ( subdivisions === undefined ) ? 1 : subdivisions;
 

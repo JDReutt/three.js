@@ -17,7 +17,7 @@
  * }
  */
 
-THREE.SpriteMaterial = function SpriteMaterial ( parameters ) {
+THREE.SpriteMaterial = function SpriteMaterial( parameters ) {
 
 	THREE.Material.call( this );
 

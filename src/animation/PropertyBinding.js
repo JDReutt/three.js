@@ -6,7 +6,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.PropertyBinding = function PropertyBinding ( rootNode, trackName ) {
+THREE.PropertyBinding = function PropertyBinding( rootNode, trackName ) {
 
 	this.rootNode = rootNode;
 	this.trackName = trackName;

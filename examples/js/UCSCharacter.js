@@ -1,4 +1,4 @@
-THREE.UCSCharacter = function UCSCharacter () {
+THREE.UCSCharacter = function UCSCharacter() {
 
 	var scope = this;
 

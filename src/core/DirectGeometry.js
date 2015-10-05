@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.DirectGeometry = function DirectGeometry () {
+THREE.DirectGeometry = function DirectGeometry() {
 
 	Object.defineProperty( this, 'id', { value: THREE.GeometryIdCount ++ } );
 

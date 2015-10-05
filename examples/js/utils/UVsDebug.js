@@ -10,7 +10,7 @@
  *
  */
 
-THREE.UVsDebug = function UVsDebug ( geometry, size ) {
+THREE.UVsDebug = function UVsDebug( geometry, size ) {
 
 	// handles wrapping of uv.x > 1 only
 

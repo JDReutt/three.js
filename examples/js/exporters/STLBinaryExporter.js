@@ -4,7 +4,7 @@
  * @author mudcube / http://mudcu.be/
  */
 
-THREE.STLBinaryExporter = function STLBinaryExporter () {};
+THREE.STLBinaryExporter = function STLBinaryExporter() {};
 
 THREE.STLBinaryExporter.prototype = {
 

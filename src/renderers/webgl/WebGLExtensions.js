@@ -2,7 +2,7 @@
 * @author mrdoob / http://mrdoob.com/
 */
 
-THREE.WebGLExtensions = function WebGLExtensions ( gl ) {
+THREE.WebGLExtensions = function WebGLExtensions( gl ) {
 
 	var extensions = {};
 

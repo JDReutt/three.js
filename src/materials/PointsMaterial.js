@@ -20,7 +20,7 @@
  * }
  */
 
-THREE.PointsMaterial = function PointsMaterial ( parameters ) {
+THREE.PointsMaterial = function PointsMaterial( parameters ) {
 
 	THREE.Material.call( this );
 
@@ -63,21 +63,21 @@ THREE.PointsMaterial.prototype.copy = function ( source ) {
 
 // backwards compatibility
 
-THREE.PointCloudMaterial = function PointCloudMaterial ( parameters ) {
+THREE.PointCloudMaterial = function PointCloudMaterial( parameters ) {
 
 	console.warn( 'THREE.PointCloudMaterial has been renamed to THREE.PointsMaterial.' );
 	return new THREE.PointsMaterial( parameters );
 
 };
 
-THREE.ParticleBasicMaterial = function ParticleBasicMaterial ( parameters ) {
+THREE.ParticleBasicMaterial = function ParticleBasicMaterial( parameters ) {
 
 	console.warn( 'THREE.ParticleBasicMaterial has been renamed to THREE.PointsMaterial.' );
 	return new THREE.PointsMaterial( parameters );
 
 };
 
-THREE.ParticleSystemMaterial = function ParticleSystemMaterial ( parameters ) {
+THREE.ParticleSystemMaterial = function ParticleSystemMaterial( parameters ) {
 
 	console.warn( 'THREE.ParticleSystemMaterial has been renamed to THREE.PointsMaterial.' );
 	return new THREE.PointsMaterial( parameters );

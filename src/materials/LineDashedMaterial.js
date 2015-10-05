@@ -21,7 +21,7 @@
  * }
  */
 
-THREE.LineDashedMaterial = function LineDashedMaterial ( parameters ) {
+THREE.LineDashedMaterial = function LineDashedMaterial( parameters ) {
 
 	THREE.Material.call( this );
 

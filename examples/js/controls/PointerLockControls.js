@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.PointerLockControls = function PointerLockControls ( camera ) {
+THREE.PointerLockControls = function PointerLockControls( camera ) {
 
 	var scope = this;
 

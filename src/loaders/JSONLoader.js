@@ -3,7 +3,7 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.JSONLoader = function JSONLoader ( manager ) {
+THREE.JSONLoader = function JSONLoader( manager ) {
 
 	if ( typeof manager === 'boolean' ) {
 

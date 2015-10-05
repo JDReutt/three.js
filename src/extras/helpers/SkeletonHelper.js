@@ -5,7 +5,7 @@
  * @author ikerr / http://verold.com
  */
 
-THREE.SkeletonHelper = function SkeletonHelper ( object ) {
+THREE.SkeletonHelper = function SkeletonHelper( object ) {
 
 	this.bones = this.getBoneList( object );
 

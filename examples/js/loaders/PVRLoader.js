@@ -8,7 +8,7 @@
  *   TODO : implement loadMipmaps option
  */
 
-THREE.PVRLoader = function PVRLoader ( manager ) {
+THREE.PVRLoader = function PVRLoader( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
 

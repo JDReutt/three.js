@@ -22,7 +22,7 @@
  * }
  **/
 
-THREE.ExtrudeGeometry = function ExtrudeGeometry ( shapes, options ) {
+THREE.ExtrudeGeometry = function ExtrudeGeometry( shapes, options ) {
 
 	if ( typeof( shapes ) === "undefined" ) {
 

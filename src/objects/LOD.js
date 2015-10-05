@@ -4,7 +4,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.LOD = function LOD () {
+THREE.LOD = function LOD() {
 
 	THREE.Object3D.call( this );
 

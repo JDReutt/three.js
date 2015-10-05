@@ -78,7 +78,7 @@
 
 	var pickerMaterial = gizmoMaterial( { visible: false, transparent: false } );
 
-	THREE.TransformGizmo = function TransformGizmo () {
+	THREE.TransformGizmo = function TransformGizmo() {
 
 		var scope = this;
 
@@ -218,7 +218,7 @@
 
 	};
 
-	THREE.TransformGizmoTranslate = function TransformGizmoTranslate () {
+	THREE.TransformGizmoTranslate = function TransformGizmoTranslate() {
 
 		THREE.TransformGizmo.call( this );
 
@@ -351,7 +351,7 @@
 	THREE.TransformGizmoTranslate.prototype = Object.create( THREE.TransformGizmo.prototype );
 	THREE.TransformGizmoTranslate.prototype.constructor = THREE.TransformGizmoTranslate;
 
-	THREE.TransformGizmoRotate = function TransformGizmoRotate () {
+	THREE.TransformGizmoRotate = function TransformGizmoRotate() {
 
 		THREE.TransformGizmo.call( this );
 
@@ -501,7 +501,7 @@
 	THREE.TransformGizmoRotate.prototype = Object.create( THREE.TransformGizmo.prototype );
 	THREE.TransformGizmoRotate.prototype.constructor = THREE.TransformGizmoRotate;
 
-	THREE.TransformGizmoScale = function TransformGizmoScale () {
+	THREE.TransformGizmoScale = function TransformGizmoScale() {
 
 		THREE.TransformGizmo.call( this );
 
@@ -601,7 +601,7 @@
 	THREE.TransformGizmoScale.prototype = Object.create( THREE.TransformGizmo.prototype );
 	THREE.TransformGizmoScale.prototype.constructor = THREE.TransformGizmoScale;
 
-	THREE.TransformControls = function TransformControls ( camera, domElement ) {
+	THREE.TransformControls = function TransformControls( camera, domElement ) {
 
 		// TODO: Make non-uniform scale and rotate play nice in hierarchies
 		// TODO: ADD RXYZ contol

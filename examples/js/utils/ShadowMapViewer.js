@@ -27,7 +27,7 @@
  *	6) If you set the position or size members directly, you need to call shadowMapViewer.update();
  */
 
-THREE.ShadowMapViewer = function ShadowMapViewer ( light ) {
+THREE.ShadowMapViewer = function ShadowMapViewer( light ) {
 
 	//- Internals
 	var scope = this;

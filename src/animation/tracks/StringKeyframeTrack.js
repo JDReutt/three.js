@@ -6,7 +6,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.StringKeyframeTrack = function StringKeyframeTrack ( name, keys ) {
+THREE.StringKeyframeTrack = function StringKeyframeTrack( name, keys ) {
 
 	THREE.KeyframeTrack.call( this, name, keys );
 

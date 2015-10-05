@@ -4,7 +4,7 @@
  * @author ikerr / http://verold.com
  */
 
-THREE.Bone = function Bone ( skin ) {
+THREE.Bone = function Bone( skin ) {
 
 	THREE.Object3D.call( this );
 

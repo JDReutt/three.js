@@ -4,7 +4,7 @@
  *
  **/
 
-THREE.Path = function Path ( points ) {
+THREE.Path = function Path( points ) {
 
 	THREE.CurvePath.call( this );
 

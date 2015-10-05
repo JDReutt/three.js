@@ -1,4 +1,4 @@
-THREE.WebGLPrograms = function WebGLPrograms ( renderer, capabilities ) {
+THREE.WebGLPrograms = function WebGLPrograms( renderer, capabilities ) {
 
 	var programs = [];
 

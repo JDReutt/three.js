@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.ObjectLoader = function ObjectLoader ( manager ) {
+THREE.ObjectLoader = function ObjectLoader( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
 	this.texturePath = '';
@@ -89,8 +89,6 @@ THREE.ObjectLoader.prototype = {
 
 				var geometry;
 				var data = json[ i ];
-
-				console.log(data.type );
 
 				switch ( data.type ) {
 

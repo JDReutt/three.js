@@ -2,7 +2,7 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.MorphAnimMesh = function MorphAnimMesh ( geometry, material ) {
+THREE.MorphAnimMesh = function MorphAnimMesh( geometry, material ) {
 
 	THREE.Mesh.call( this, geometry, material );
 

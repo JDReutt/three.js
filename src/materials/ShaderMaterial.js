@@ -28,7 +28,7 @@
  * }
  */
 
-THREE.ShaderMaterial = function ShaderMaterial ( parameters ) {
+THREE.ShaderMaterial = function ShaderMaterial( parameters ) {
 
 	THREE.Material.call( this );
 

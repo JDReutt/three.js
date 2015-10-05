@@ -4,7 +4,7 @@
  * @author WestLangley / http://github.com/WestLangley
 */
 
-THREE.Camera = function Camera () {
+THREE.Camera = function Camera() {
 
 	THREE.Object3D.call( this );
 

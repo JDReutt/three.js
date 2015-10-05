@@ -2,7 +2,7 @@
  * https://github.com/mrdoob/eventdispatcher.js/
  */
 
-THREE.EventDispatcher = function EventDispatcher () {};
+THREE.EventDispatcher = function EventDispatcher() {};
 
 THREE.EventDispatcher.prototype = {
 

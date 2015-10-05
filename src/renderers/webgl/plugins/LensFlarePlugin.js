@@ -3,7 +3,7 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.LensFlarePlugin = function LensFlarePlugin ( renderer, flares ) {
+THREE.LensFlarePlugin = function LensFlarePlugin( renderer, flares ) {
 
 	var gl = renderer.context;
 	var state = renderer.state;

@@ -6,7 +6,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.VectorKeyframeTrack = function VectorKeyframeTrack ( name, keys ) {
+THREE.VectorKeyframeTrack = function VectorKeyframeTrack( name, keys ) {
 
 	THREE.KeyframeTrack.call( this, name, keys );
 

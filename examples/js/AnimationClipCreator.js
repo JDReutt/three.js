@@ -6,7 +6,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.AnimationClipCreator = function AnimationClipCreator () {
+THREE.AnimationClipCreator = function AnimationClipCreator() {
 };
 
 THREE.AnimationClipCreator.CreateRotationAnimation = function( period, axis ) {

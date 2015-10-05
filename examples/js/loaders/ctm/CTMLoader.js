@@ -8,7 +8,7 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.CTMLoader = function CTMLoader () {
+THREE.CTMLoader = function CTMLoader() {
 
 	THREE.Loader.call( this );
 

@@ -4,7 +4,7 @@
  * Abstract Base class to load generic binary textures formats (rgbe, hdr, ...)
  */
 
-THREE.DataTextureLoader = THREE.BinaryTextureLoader = function DataTextureLoader ( manager ) {
+THREE.BinaryTextureLoader = function BinaryTextureLoader( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
 
@@ -94,3 +94,5 @@ THREE.BinaryTextureLoader.prototype = {
 	}
 
 };
+
+THREE.DataTextureLoader = THREE.BinaryTextureLoader;

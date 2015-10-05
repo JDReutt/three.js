@@ -6,7 +6,7 @@
  * @author erik kitson
  */
 
-THREE.KeyFrameAnimation = function KeyFrameAnimation ( data ) {
+THREE.KeyFrameAnimation = function KeyFrameAnimation( data ) {
 
 	this.root = data.node;
 	this.data = THREE.AnimationHandler.init( data );

@@ -5,7 +5,7 @@
  * @author daoshengmu / http://dsmu.me/
  */
 
-THREE.SoftwareRenderer = function SoftwareRenderer ( parameters ) {
+THREE.SoftwareRenderer = function SoftwareRenderer( parameters ) {
 
 	console.log( 'THREE.SoftwareRenderer', THREE.REVISION );
 

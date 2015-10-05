@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.DDSLoader = function DDSLoader () {
+THREE.DDSLoader = function DDSLoader() {
 
 	this._parser = THREE.DDSLoader.parse;
 

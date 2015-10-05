@@ -2,7 +2,7 @@
 * @author fordacious / fordacious.github.io
 */
 
-THREE.WebGLProperties = function WebGLProperties () {
+THREE.WebGLProperties = function WebGLProperties() {
 
 	var properties = {};
 

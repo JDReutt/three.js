@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.TypedGeometryExporter = function TypedGeometryExporter () {};
+THREE.TypedGeometryExporter = function TypedGeometryExporter() {};
 
 THREE.TypedGeometryExporter.prototype = {
 

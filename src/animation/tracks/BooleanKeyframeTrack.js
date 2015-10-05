@@ -6,7 +6,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.BooleanKeyframeTrack = function BooleanKeyframeTrack ( name, keys ) {
+THREE.BooleanKeyframeTrack = function BooleanKeyframeTrack( name, keys ) {
 
 	THREE.KeyframeTrack.call( this, name, keys );
 

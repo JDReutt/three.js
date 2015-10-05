@@ -14,7 +14,7 @@
  * }
  */
 
-THREE.MeshNormalMaterial = function MeshNormalMaterial ( parameters ) {
+THREE.MeshNormalMaterial = function MeshNormalMaterial( parameters ) {
 
 	THREE.Material.call( this, parameters );
 

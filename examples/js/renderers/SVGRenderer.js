@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.SVGObject = function SVGObject ( node ) {
+THREE.SVGObject = function SVGObject( node ) {
 
 	THREE.Object3D.call( this );
 
@@ -13,7 +13,7 @@ THREE.SVGObject = function SVGObject ( node ) {
 THREE.SVGObject.prototype = Object.create( THREE.Object3D.prototype );
 THREE.SVGObject.prototype.constructor = THREE.SVGObject;
 
-THREE.SVGRenderer = function SVGRenderer () {
+THREE.SVGRenderer = function SVGRenderer() {
 
 	console.log( 'THREE.SVGRenderer', THREE.REVISION );
 

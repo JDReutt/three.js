@@ -3,7 +3,7 @@
  */
 
 
-THREE.BokehPass = function BokehPass ( scene, camera, params ) {
+THREE.BokehPass = function BokehPass( scene, camera, params ) {
 
 	this.scene = scene;
 	this.camera = camera;

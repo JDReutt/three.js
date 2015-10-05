@@ -36,7 +36,7 @@
 */
 
 
-THREE.TextGeometry = function TextGeometry ( text, parameters ) {
+THREE.TextGeometry = function TextGeometry( text, parameters ) {
 
 	parameters = parameters || {};
 

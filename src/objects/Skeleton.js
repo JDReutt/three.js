@@ -5,7 +5,7 @@
  * @author ikerr / http://verold.com
  */
 
-THREE.Skeleton = function Skeleton ( bones, boneInverses, useVertexTexture ) {
+THREE.Skeleton = function Skeleton( bones, boneInverses, useVertexTexture ) {
 
 	this.useVertexTexture = useVertexTexture !== undefined ? useVertexTexture : true;
 

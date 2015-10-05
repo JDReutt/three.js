@@ -2,7 +2,7 @@
  * @author Michael Guerrero / http://realitymeltdown.com
  */
 
-THREE.BlendCharacter = function BlendCharacter () {
+THREE.BlendCharacter = function BlendCharacter() {
 
 	this.animations = {};
 	this.weightSchedule = [];

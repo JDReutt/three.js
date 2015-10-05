@@ -7,7 +7,7 @@
  * @author David Sarno / http://lighthaus.us/
  */
 
-THREE.AnimationMixer = function AnimationMixer ( root ) {
+THREE.AnimationMixer = function AnimationMixer( root ) {
 
 	this.root = root;
 	this.time = 0;

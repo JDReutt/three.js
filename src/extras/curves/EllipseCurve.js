@@ -2,7 +2,7 @@
  *	Ellipse curve
  **************************************************************/
 
-THREE.EllipseCurve = function EllipseCurve ( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation ) {
+THREE.EllipseCurve = function EllipseCurve( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation ) {
 
 	this.aX = aX;
 	this.aY = aY;

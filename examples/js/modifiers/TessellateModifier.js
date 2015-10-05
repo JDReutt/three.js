@@ -5,7 +5,7 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.TessellateModifier = function TessellateModifier ( maxEdgeLength ) {
+THREE.TessellateModifier = function TessellateModifier( maxEdgeLength ) {
 
 	this.maxEdgeLength = maxEdgeLength;
 

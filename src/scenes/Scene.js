@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.Scene = function Scene () {
+THREE.Scene = function Scene() {
 
 	THREE.Object3D.call( this );
 

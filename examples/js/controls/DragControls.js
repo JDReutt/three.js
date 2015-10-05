@@ -2,7 +2,7 @@
  * @author zz85 / https://github.com/zz85
  * Running this will allow you to drag three.js objects around the screen.
  */
-THREE.DragControls = function DragControls ( _camera, _objects, _domElement ) {
+THREE.DragControls = function DragControls( _camera, _objects, _domElement ) {
 
 	var _projector = new THREE.Projector();
 	var _raycaster = new THREE.Raycaster();

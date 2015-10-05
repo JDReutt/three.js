@@ -111,7 +111,7 @@ THREE.ShaderLib[ 'water' ] = {
 
 };
 
-THREE.Water = function Water ( renderer, camera, scene, options ) {
+THREE.Water = function Water( renderer, camera, scene, options ) {
 
 	THREE.Object3D.call( this );
 	this.name = 'water_' + this.id;

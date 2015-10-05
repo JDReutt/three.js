@@ -2,7 +2,7 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.OrthographicCamera = function OrthographicCamera ( left, right, top, bottom, near, far ) {
+THREE.OrthographicCamera = function OrthographicCamera( left, right, top, bottom, near, far ) {
 
 	THREE.Camera.call( this );
 

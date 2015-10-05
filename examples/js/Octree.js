@@ -73,7 +73,7 @@
 
 	=====================================================*/
 
-	THREE.Octree = function Octree ( parameters ) {
+	THREE.Octree = function Octree( parameters ) {
 
 		// handle parameters
 
@@ -618,7 +618,7 @@
 
 	=====================================================*/
 
-	THREE.OctreeObjectData = function OctreeObjectData ( object, part ) {
+	THREE.OctreeObjectData = function OctreeObjectData( object, part ) {
 
 		// properties
 
@@ -719,7 +719,7 @@
 
 	=====================================================*/
 
-	THREE.OctreeNode = function OctreeNode ( parameters ) {
+	THREE.OctreeNode = function OctreeNode( parameters ) {
 
 		// utility
 

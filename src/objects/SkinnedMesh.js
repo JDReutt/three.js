@@ -4,7 +4,7 @@
  * @author ikerr / http://verold.com
  */
 
-THREE.SkinnedMesh = function SkinnedMesh ( geometry, material, useVertexTexture ) {
+THREE.SkinnedMesh = function SkinnedMesh( geometry, material, useVertexTexture ) {
 
 	THREE.Mesh.call( this, geometry, material );
 

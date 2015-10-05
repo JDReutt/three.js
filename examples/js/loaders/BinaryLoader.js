@@ -2,7 +2,7 @@
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.BinaryLoader = function BinaryLoader ( manager ) {
+THREE.BinaryLoader = function BinaryLoader( manager ) {
 
 	if ( typeof manager === 'boolean' ) {
 
