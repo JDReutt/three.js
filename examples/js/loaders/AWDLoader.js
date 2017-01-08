@@ -52,7 +52,7 @@
 
 	}
 
-	AWDProperties = function() {}
+	AWDProperties = function() {};
 
 	AWDProperties.prototype = {
 		set : function( key, value ) {
@@ -68,7 +68,7 @@
 			else return fallback;
 
 		}
-	}
+	};
 
 	THREE.AWDLoader = function ( manager ) {
 
@@ -81,7 +81,7 @@
 		this._url     = '';
 		this._baseDir = '';
 
-		this._data;
+		this._data = undefined;
 		this._ptr = 0;
 
 		this._version =  [];
@@ -109,20 +109,13 @@
 			this._url = url;
 			this._baseDir = url.substr( 0, url.lastIndexOf( '/' ) + 1 );
 
-			var loader = new THREE.XHRLoader( this.manager );
-			loader.setCrossOrigin( this.crossOrigin );
+			var loader = new THREE.FileLoader( this.manager );
 			loader.setResponseType( 'arraybuffer' );
 			loader.load( url, function ( text ) {
 
 				onLoad( scope.parse( text ) );
 
 			}, onProgress, onError );
-
-		},
-
-		setCrossOrigin: function ( value ) {
-
-			this.crossOrigin = value;
 
 		},
 

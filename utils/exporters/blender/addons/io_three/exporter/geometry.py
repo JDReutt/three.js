@@ -45,7 +45,7 @@ class Geometry(base_classes.BaseNode):
             ext = constants.PACK
 
         key = ''
-        for key in (constants.MORPH_TARGETS, constants.ANIMATION):
+        for key in (constants.MORPH_TARGETS, constants.ANIMATION, constants.CLIPS):
             if key in self.keys():
                 break
         else:
@@ -148,11 +148,11 @@ class Geometry(base_classes.BaseNode):
     def copy_textures(self, texture_folder=''):
         """Copy the textures to the destination directory."""
         logger.debug("Geometry().copy_textures()")
-        if self.options.get(constants.COPY_TEXTURES):
+        if self.options.get(constants.EXPORT_TEXTURES) and not self.options.get(constants.EMBED_TEXTURES):
             texture_registration = self.register_textures()
             if texture_registration:
                 logger.info("%s has registered textures", self.node)
-                dirname = os.path.dirname(self.scene.filepath)
+                dirname = os.path.dirname(os.path.abspath(self.scene.filepath))
                 full_path = os.path.join(dirname, texture_folder)
                 io.copy_registered_textures(
                     full_path, texture_registration)
@@ -178,7 +178,7 @@ class Geometry(base_classes.BaseNode):
 
     def write(self, filepath=None):
         """Write the geometry definitions to disk. Uses the
-        desitnation path of the scene.
+        destination path of the scene.
 
         :param filepath: optional output file path
                         (Default value = None)
@@ -206,7 +206,7 @@ class Geometry(base_classes.BaseNode):
         """
         logger.debug("Geometry().write_animation(%s)", filepath)
 
-        for key in (constants.MORPH_TARGETS, constants.ANIMATION):
+        for key in (constants.MORPH_TARGETS, constants.ANIMATION, constants.CLIPS):
             try:
                 data = self[key]
                 break
@@ -234,18 +234,23 @@ class Geometry(base_classes.BaseNode):
         logger.debug("Geometry()._component_data()")
 
         if self[constants.TYPE] != constants.GEOMETRY.title():
-            return self[constants.ATTRIBUTES]
+            data = {}
+            index = self.get(constants.INDEX)
+            if index is not None:
+                data[constants.INDEX] = index
+            data[constants.ATTRIBUTES] = self.get(constants.ATTRIBUTES)
+            return {constants.DATA: data}
 
         components = [constants.VERTICES, constants.FACES,
                       constants.UVS, constants.COLORS,
                       constants.NORMALS, constants.BONES,
                       constants.SKIN_WEIGHTS,
-                      constants.SKIN_INDICES, constants.NAME,
+                      constants.SKIN_INDICES,
                       constants.INFLUENCES_PER_VERTEX,
                       constants.INDEX]
 
         data = {}
-        anim_components = [constants.MORPH_TARGETS, constants.ANIMATION]
+        anim_components = [constants.MORPH_TARGETS, constants.ANIMATION, constants.MORPH_TARGETS_ANIM, constants.CLIPS]
         if self.options.get(constants.EMBED_ANIMATION):
             components.extend(anim_components)
         else:
@@ -281,18 +286,13 @@ class Geometry(base_classes.BaseNode):
         :rtype: dict
 
         """
-        data = self._component_data()
-
-        if self[constants.TYPE] != constants.GEOMETRY.title():
-            data = {
-                constants.DATA: {constants.ATTRIBUTES: data}
+        data = {
+            constants.METADATA: {
+                constants.TYPE: self[constants.TYPE]
             }
-
-        data[constants.METADATA] = {
-            constants.TYPE: self[constants.TYPE]
         }
-
         data[constants.METADATA].update(self.metadata)
+        data.update(self._component_data())
 
         draw_calls = self.get(constants.DRAW_CALLS)
         if draw_calls is not None:
@@ -347,31 +347,18 @@ class Geometry(base_classes.BaseNode):
 
         """
         data = {
+            constants.NAME: self[constants.NAME],
             constants.UUID: self[constants.UUID],
             constants.TYPE: self[constants.TYPE]
         }
 
-        component_data = self._component_data()
         if self[constants.TYPE] == constants.GEOMETRY.title():
-            data[constants.DATA] = component_data
-            data[constants.DATA].update({
-                constants.METADATA: self.metadata
-            })
+            data[constants.DATA] = self._component_data()
         else:
-            geometry_data = data
-            if self.options.get(constants.EMBED_GEOMETRY, True):
-                data[constants.DATA] = geometry_data = {}
-
-            geometry_data[constants.ATTRIBUTES] = component_data
-            index = self.get(constants.INDEX)
-            if index is not None:
-                geometry_data[constants.INDEX] = index
+            data.update(self._component_data())
             draw_calls = self.get(constants.DRAW_CALLS)
             if draw_calls is not None:
                 geometry_data[constants.DRAW_CALLS] = draw_calls
-
-            data[constants.METADATA] = self.metadata
-            data[constants.NAME] = self[constants.NAME]
 
         return data
 
@@ -389,9 +376,11 @@ class Geometry(base_classes.BaseNode):
                      api.mesh.buffer_position, 3)
         uvs_tuple = (constants.UV, option_uvs,
                      api.mesh.buffer_uv, 2)
+        uvs2_tuple = (constants.UV2, option_uvs,
+                     lambda m: api.mesh.buffer_uv(m, layer=1), 2)
         normals_tuple = (constants.NORMAL, option_normals,
                          api.mesh.buffer_normal, 3)
-        dispatch = (pos_tuple, uvs_tuple, normals_tuple)
+        dispatch = (pos_tuple, uvs_tuple, uvs2_tuple, normals_tuple)
 
         for key, option, func, size in dispatch:
 
@@ -556,14 +545,24 @@ class Geometry(base_classes.BaseNode):
             logger.info("Parsing %s", constants.SKINNING)
             influences = self.options.get(
                 constants.INFLUENCES_PER_VERTEX, 2)
+            anim_type = self.options.get(constants.ANIMATION)
 
             self[constants.INFLUENCES_PER_VERTEX] = influences
             self[constants.SKIN_INDICES] = api.mesh.skin_indices(
-                self.node, bone_map, influences) or []
+                self.node, bone_map, influences, anim_type) or []
             self[constants.SKIN_WEIGHTS] = api.mesh.skin_weights(
-                self.node, bone_map, influences) or []
+                self.node, bone_map, influences, anim_type) or []
 
-        if self.options.get(constants.MORPH_TARGETS):
+        if self.options.get(constants.BLEND_SHAPES):
+            logger.info("Parsing %s", constants.BLEND_SHAPES)
+            mt = api.mesh.blend_shapes(self.node, self.options) or []
+            self[constants.MORPH_TARGETS] = mt
+            if len(mt) > 0 and self._scene:  # there's blend shapes, let check for animation
+                tracks = api.mesh.animated_blend_shapes(self.node, self[constants.NAME], self.options) or []
+                merge = self._scene[constants.ANIMATION][0][constants.KEYFRAMES]
+                for track in tracks:
+                    merge.append(track)
+        elif self.options.get(constants.MORPH_TARGETS):
             logger.info("Parsing %s", constants.MORPH_TARGETS)
             self[constants.MORPH_TARGETS] = api.mesh.morph_targets(
                 self.node, self.options) or []

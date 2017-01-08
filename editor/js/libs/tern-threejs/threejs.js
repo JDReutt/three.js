@@ -368,7 +368,7 @@
         },
         "materialIndex": {
           "!type": "number",
-          "!doc": "Material index (points to [page:MeshFaceMaterial MeshFaceMaterial.materials])."
+          "!doc": "Material index (points to [page:MultiMaterial MultiMaterial.materials])."
         },
         "clone": {
           "!type": "fn() -> +THREE.Face3",
@@ -408,10 +408,6 @@
         "morphTargets": {
           "!type": "[]",
           "!doc": "Array of morph targets. Each morph target is a Javascript object:\n\t\t<code>{ name: \"targetName\", vertices: [ new THREE.Vector3(), ... ] }</code>\n\t\tMorph vertices match number and order of primary vertices."
-        },
-        "morphColors": {
-          "!type": "[]",
-          "!doc": "Array of morph colors. Morph colors have similar structure as morph targets, each color set is a Javascript object:\n\t\t<code>morphColor = { name: \"colorName\", colors: [ new THREE.Color(), ... ] }</code>\n\t\tMorph colors can match either the number and order of faces (face colors) or the number of vertices (vertex colors)."
         },
         "morphNormals": {
           "!type": "[]",
@@ -583,10 +579,6 @@
         "matrixWorldNeedsUpdate": {
           "!type": "bool",
           "!doc": "default – false"
-        },
-        "rotationAutoUpdate": {
-          "!type": "bool",
-          "!doc": "default – true"
         },
         "userData": {
           "!type": "object",
@@ -964,7 +956,7 @@
       "prototype": {
         "createMultiMaterialObject": {
           "!type": "fn(geometry: +THREE.Geometry, materials: []) -> +THREE.Object3D",
-          "!doc": "Creates an new Object3D an new mesh for each material defined in materials. Beware that this is not the same as Meshfacematerial which defines multiple material for 1 mesh.<br>\n\t\tThis is mostly useful for object that need a material and a wireframe implementation."
+          "!doc": "Creates an new Object3D an new mesh for each material defined in materials. Beware that this is not the same as MultiMaterial which defines multiple material for 1 mesh.<br>\n\t\tThis is mostly useful for object that need a material and a wireframe implementation."
         },
         "attach": {
           "!type": "fn(child: +THREE.Object3D, scene: +THREE.Object3D, parent: +THREE.Object3D)",
@@ -978,7 +970,7 @@
       "!doc": "A class containing useful utility functions for scene manipulation."
     },
     "Animation": {
-      "!url": "http://threejs.org/docs/#Reference/extras/animation/Animation",
+      "!url": "http://threejs.org/docs/#Reference/extras/collada-animation/Animation",
       "prototype": {
         "root": {
           "!type": "Object3d",
@@ -1045,7 +1037,7 @@
       "!type": "fn(root: Object3d, name: string)"
     },
     "AnimationHandler": {
-      "!url": "http://threejs.org/docs/#Reference/extras/animation/AnimationHandler",
+      "!url": "http://threejs.org/docs/#Reference/extras/collada-animation/AnimationHandler",
       "prototype": {
         "CATMULLROM": {
           "!type": "number",
@@ -1088,7 +1080,7 @@
       "!type": "fn()"
     },
     "AnimationMorphTarget": {
-      "!url": "http://threejs.org/docs/#Reference/extras/animation/AnimationMorphTarget",
+      "!url": "http://threejs.org/docs/#Reference/extras/collada-animation/AnimationMorphTarget",
       "prototype": {
         "root": {
           "!type": "todo",
@@ -1147,7 +1139,7 @@
       "!type": "fn(root: todo, data: todo)"
     },
     "KeyFrameAnimation": {
-      "!url": "http://threejs.org/docs/#Reference/extras/animation/KeyFrameAnimation",
+      "!url": "http://threejs.org/docs/#Reference/extras/collada-animation/KeyFrameAnimation",
       "prototype": {
         "root": {
           "!type": "todo",
@@ -1547,7 +1539,7 @@
       "!type": "fn(points: [])"
     },
     "BoxGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/BoxGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/BoxGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1555,7 +1547,7 @@
       "!type": "fn(width: number, height: number, depth: number, widthSegments: number, heightSegments: number, depthSegments: number)"
     },
     "CircleGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/CircleGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/CircleGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1563,14 +1555,14 @@
       "!type": "fn(radius: number, segments: number, thetaStart: number, thetaLength: number)"
     },
     "CubeGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/CubeGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/CubeGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
       "!doc": "Renamed CubeGeometry to BoxGeometry. see [page:BoxGeometry]."
     },
     "CylinderGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/CylinderGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/CylinderGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1578,7 +1570,7 @@
       "!type": "fn(radiusTop: number, radiusBottom: number, height: number, radiusSegments: number, heightSegments: number, openEnded: bool, thetaStart: number, thetaLength: number)"
     },
     "DodecahedronGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/DodecahedronGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/DodecahedronGeometry",
       "prototype": {
         "!proto": "THREE.PolyhedronGeometry.prototype",
         "parameters": {
@@ -1590,7 +1582,7 @@
       "!type": "fn(radius: number, detail: number)"
     },
     "ExtrudeGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/ExtrudeGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/ExtrudeGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype",
         "addShapeList": {
@@ -1606,7 +1598,7 @@
       "!type": "fn(shapes: [], options: object)"
     },
     "IcosahedronGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/IcosahedronGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/IcosahedronGeometry",
       "prototype": {
         "!proto": "THREE.PolyhedronGeometry.prototype",
         "parameters": {
@@ -1618,15 +1610,15 @@
       "!type": "fn(radius: number, detail: number)"
     },
     "LatheGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/LatheGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/LatheGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
-      "!doc": "Class for generating meshes with axial symmetry. Possible uses include donuts, pipes, vases etc. The lathe rotate around the Z axis.",
+      "!doc": "Class for generating meshes with axial symmetry. Possible uses include donuts, pipes, vases etc. The lathe rotate around the Y axis.",
       "!type": "fn(points: [], segments: number, phiStart: number, phiLength: number)"
     },
     "OctahedronGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/OctahedronGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/OctahedronGeometry",
       "prototype": {
         "!proto": "THREE.PolyhedronGeometry.prototype",
         "parameters": {
@@ -1638,7 +1630,7 @@
       "!type": "fn(radius: number, detail: number)"
     },
     "ParametricGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/ParametricGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/ParametricGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1646,7 +1638,7 @@
       "!type": "fn(func: function, slices: number, stacks: number)"
     },
     "PlaneGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/PlaneGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/PlaneGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1654,7 +1646,7 @@
       "!type": "fn(width: number, height: number, widthSegments: number, heightSegments: number)"
     },
     "PolyhedronGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/PolyhedronGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/PolyhedronGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype",
         "parameters": {
@@ -1666,7 +1658,7 @@
       "!type": "fn(vertices: [], faces: [], radius: number, detail: number)"
     },
     "RingGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/RingGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/RingGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1674,7 +1666,7 @@
       "!type": "fn(innerRadius: number, outerRadius: number, thetaSegments: number, phiSegments: number, thetaStart: number, thetaLength: number)"
     },
     "ShapeGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/ShapeGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/ShapeGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype",
         "addShape": {
@@ -1686,7 +1678,7 @@
       "!type": "fn(shapes: [], options: object)"
     },
     "SphereGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/SphereGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/SphereGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1694,7 +1686,7 @@
       "!type": "fn(radius: number, widthSegments: number, heightSegments: number, phiStart: number, phiLength: number, thetaStart: number, thetaLength: number)"
     },
     "TetrahedronGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/TetrahedronGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/TetrahedronGeometry",
       "prototype": {
         "!proto": "THREE.PolyhedronGeometry.prototype",
         "parameters": {
@@ -1706,7 +1698,7 @@
       "!type": "fn(radius: number, detail: number)"
     },
     "TextGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/TextGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/TextGeometry",
       "prototype": {
         "!proto": "THREE.ExtrudeGeometry.prototype"
       },
@@ -1714,7 +1706,7 @@
       "!type": "fn(text: string, parameters: object)"
     },
     "TorusGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/TorusGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/TorusGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1722,7 +1714,7 @@
       "!type": "fn(radius: number, tube: number, radialSegments: number, tubularSegments: number, arc: number)"
     },
     "TorusKnotGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/TorusKnotGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/TorusKnotGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype"
       },
@@ -1730,7 +1722,7 @@
       "!type": "fn(radius: number, tube: number, radialSegments: number, tubularSegments: number, p: number, q: number, heightScale: number)"
     },
     "TubeGeometry": {
-      "!url": "http://threejs.org/docs/#Reference/extras/geometries/TubeGeometry",
+      "!url": "http://threejs.org/docs/#Reference/geometries/TubeGeometry",
       "prototype": {
         "!proto": "THREE.Geometry.prototype",
         "parameters": {
@@ -1892,11 +1884,7 @@
     "GridHelper": {
       "!url": "http://threejs.org/docs/#Reference/extras/helpers/GridHelper",
       "prototype": {
-        "!proto": "THREE.Line.prototype",
-        "setColors": {
-          "!type": "fn(colorCenterLine: number, colorGrid: number)",
-          "!doc": "Updates the color of the grid lines."
-        }
+        "!proto": "THREE.Line.prototype"
       },
       "!doc": "The GridHelper is an object to define grids. Grids are two-dimensional arrays of lines.",
       "!type": "fn(size: number, step: number)"
@@ -2088,106 +2076,6 @@
         "intensity": {
           "!type": "number",
           "!doc": "Light's intensity.<br>\n\t\t\tDefault — *1.0*."
-        },
-        "onlyShadow": {
-          "!type": "bool",
-          "!doc": "If set to *true* light will only cast shadow but not contribute any lighting (as if *intensity* was 0 but cheaper to compute).<br>\n\t\t\tDefault — *false*."
-        },
-        "shadowCameraNear": {
-          "!type": "number",
-          "!doc": "Orthographic shadow camera frustum parameter.<br>\n\t\t\tDefault — *50*."
-        },
-        "shadowCameraFar": {
-          "!type": "number",
-          "!doc": "Orthographic shadow camera frustum parameter.<br>\n\t\t\tDefault — *5000*."
-        },
-        "shadowCameraLeft": {
-          "!type": "number",
-          "!doc": "Orthographic shadow camera frustum parameter.<br>\n\t\t\tDefault — *-500*."
-        },
-        "shadowCameraRight": {
-          "!type": "number",
-          "!doc": "Orthographic shadow camera frustum parameter.<br>\n\t\t\tDefault — *500*."
-        },
-        "shadowCameraTop": {
-          "!type": "number",
-          "!doc": "Orthographic shadow camera frustum parameter.<br>\n\t\t\tDefault — *500*."
-        },
-        "shadowCameraBottom": {
-          "!type": "number",
-          "!doc": "Orthographic shadow camera frustum parameter.<br>\n\t\t\tDefault — *-500*."
-        },
-        "shadowCameraVisible": {
-          "!type": "bool",
-          "!doc": "Show debug shadow camera frustum.<br>\n\t\t\tDefault — *false*."
-        },
-        "shadowBias": {
-          "!type": "number",
-          "!doc": "Shadow map bias, how much to add or subtract from the normalized depth when deciding whether a surface is in shadow.<br>\n\t\t\tDefault — *0*."
-        },
-        "shadowDarkness": {
-          "!type": "number",
-          "!doc": "Darkness of shadow casted by this light (from *0* to *1*).<br>\n\t\t\tDefault — *0.5*."
-        },
-        "shadowMapWidth": {
-          "!type": "number",
-          "!doc": "Shadow map texture width in pixels.<br>\n\t\t\tDefault — *512*."
-        },
-        "shadowMapHeight": {
-          "!type": "number",
-          "!doc": "Shadow map texture height in pixels.<br>\n\t\t\tDefault — *512*."
-        },
-        "shadowCascade": {
-          "!type": "bool",
-          "!doc": "**Experimental** If true, use a series of shadow maps in a cascade. This can give better z-depth resolution for a directional light. <br>\n\t\t\tDefault — *false*."
-        },
-        "shadowCascadeCount": {
-          "!type": "number",
-          "!doc": "Number of shadow maps to allocate in a cascade (one after another). <br>\n\t\t\tDefault — *2*."
-        },
-        "shadowCascadeOffset": {
-          "!type": "+THREE.Vector3",
-          "!doc": "A relative position to real camera where virtual shadow cameras are attached. A magic vector; scene and light orientation dependent. <br>\n\t\t\tDefault — *Three.Vector3( 0, 0, -1000 )*."
-        },
-        "shadowCascadeBias": {
-          "!type": "[]",
-          "!doc": "An array of shadowMapBias values for the corresponding shadow map in the cascade, near to far. <br>\n\t\t\tDefault — <strong>[ 0, 0, 0 ]</strong>."
-        },
-        "shadowCascadeWidth": {
-          "!type": "[]",
-          "!doc": "An array of shadowMapWidth values for the corresponding shadow map in the cascade, near to far. <br>\n\t\t\tDefault — <strong>[ 512, 512, 512 ]</strong>."
-        },
-        "shadowCascadeHeight": {
-          "!type": "[]",
-          "!doc": "An array of shadowMapHeight values for the corresponding shadow map in the cascade, near to far. <br>\n\t\t\tDefault — <strong>[ 512, 512, 512 ]</strong>."
-        },
-        "shadowCascadeNearZ": {
-          "!type": "[]",
-          "!doc": "An array of shadowMapNear values for the corresponding shadow map in the cascade, near to far. These typically start with -1.0 (near plane) and match with the previous shadowCascadeFarZ array value.<br>\n\t\t\tDefault — <strong>[ -1.000, 0.990, 0.998 ]</strong>."
-        },
-        "shadowCascadeFarZ": {
-          "!type": "[]",
-          "!doc": "An array of shadowMapFar values for the corresponding shadow map in the cascade, near to far. These typically match with the next shadowCascadeNearZ array value, ending in 1.0.<br>\n\t\t\tDefault — <strong>[ 0.990, 0.998, 1.000 ]</strong>."
-        },
-        "shadowCascadeArray": {
-          "!type": "[]",
-          "!doc": "Array of size shadowCascadeCount of [page:DirectionalLight THREE.DirectionalLight] objects. This holds the series of separate shadow maps in a cascade, near to far. Created internally."
-        },
-        "shadowMapSize": {
-          "!type": "+THREE.Vector2",
-          "!doc": "The shadowMapWidth and shadowMapHeight stored in a [page:Vector2 THREE.Vector2]. Set internally during rendering."
-        },
-        "shadowCamera": {
-          "!type": "+THREE.OrthographicCamera",
-          "!doc": "The shadow's view of the world. Computed internally during rendering from the shadowCamera* settings."
-        },
-        "shadowMatrix": {
-          "!type": "+THREE.Matrix4",
-          "!doc": "Model to shadow camera space, to compute location and depth in shadow map. Computed internally during rendering."
-        },
-        "shadowMap": {
-          "!type": "+THREE.WebGLRenderTarget",
-          "!doc": "The depth map generated using the shadowCamera; a location beyond a pixel's depth is in shadow. Computed internally during rendering."
         }
       },
       "!doc": "Affects objects using [page:MeshLambertMaterial] or [page:MeshPhongMaterial].",
@@ -2260,62 +2148,6 @@
         "exponent": {
           "!type": "number",
           "!doc": "Rapidity of the falloff of light from its target direction.<br>\n\t\t\tDefault — *10.0*."
-        },
-        "castShadow": {
-          "!type": "bool",
-          "!doc": "If set to *true* light will cast dynamic shadows. *Warning*: This is expensive and requires tweaking to get shadows looking right.<br>\n\t\t\tDefault — *false*."
-        },
-        "onlyShadow": {
-          "!type": "bool",
-          "!doc": "If set to *true* light will only cast shadow but not contribute any lighting (as if *intensity* was 0 but cheaper to compute).<br>\n\t\t\tDefault — *false*."
-        },
-        "shadowCameraNear": {
-          "!type": "number",
-          "!doc": "Perspective shadow camera frustum <em>near</em> parameter.<br>\n\t\t\tDefault — *50*."
-        },
-        "shadowCameraFar": {
-          "!type": "number",
-          "!doc": "Perspective shadow camera frustum <em>far</em> parameter.<br>\n\t\t\tDefault — *5000*."
-        },
-        "shadowCameraFov": {
-          "!type": "number",
-          "!doc": "Perspective shadow camera frustum <em>field of view</em> parameter.<br>\n\t\t\tDefault — *50*."
-        },
-        "shadowCameraVisible": {
-          "!type": "bool",
-          "!doc": "Show debug shadow camera frustum.<br>\n\t\t\tDefault — *false*."
-        },
-        "shadowBias": {
-          "!type": "number",
-          "!doc": "Shadow map bias, how much to add or subtract from the normalized depth when deciding whether a surface is in shadow.<br>\n\t\t\tDefault — *0*."
-        },
-        "shadowDarkness": {
-          "!type": "number",
-          "!doc": "Darkness of shadow casted by this light (from *0* to *1*).<br>\n\t\t\tDefault — *0.5*."
-        },
-        "shadowMapWidth": {
-          "!type": "number",
-          "!doc": "Shadow map texture width in pixels.<br>\n\t\t\tDefault — *512*."
-        },
-        "shadowMapHeight": {
-          "!type": "number",
-          "!doc": "Shadow map texture height in pixels.<br>\n\t\t\tDefault — *512*."
-        },
-        "shadowMapSize": {
-          "!type": "+THREE.Vector2",
-          "!doc": "The shadowMapWidth and shadowMapHeight stored in a [page:Vector2 THREE.Vector2]. Set internally during rendering."
-        },
-        "shadowCamera": {
-          "!type": "+THREE.PerspectiveCamera",
-          "!doc": "The shadow's view of the world. Computed internally during rendering from the shadowCamera* settings."
-        },
-        "shadowMatrix": {
-          "!type": "+THREE.Matrix4",
-          "!doc": "Model to shadow camera space, to compute location and depth in shadow map. Computed internally during rendering."
-        },
-        "shadowMap": {
-          "!type": "+THREE.WebGLRenderTarget",
-          "!doc": "The depth map generated using the shadowCamera; a location beyond a pixel's depth is in shadow. Computed internally during rendering."
         }
       },
       "!doc": "A point light that can cast shadow in one direction.",
@@ -2375,7 +2207,7 @@
           "!doc": "Remove all values from the cache."
         }
       },
-      "!doc": "A simple caching classe, used internaly by [page:XHRLoader].",
+      "!doc": "A simple caching classe, used internaly by [page:FileLoader].",
       "!type": "fn()"
     },
     "ColladaLoader": {
@@ -2436,14 +2268,6 @@
           "!type": "boolean",
           "!doc": "If true, the ajax request will use cookies."
         },
-        "showStatus": {
-          "!type": "bool",
-          "!doc": "If true, show loading status in the statusDomElement."
-        },
-        "statusDomElement": {
-          "!type": "DOMElement",
-          "!doc": "This is the recipient of status messages."
-        },
         "onLoadStart": {
           "!type": "function",
           "!doc": "The default is a function with empty body."
@@ -2479,26 +2303,14 @@
         "extractUrlBase": {
           "!type": "fn(url: string) -> string",
           "!doc": "Extract the base from the URL."
-        },
-        "addStatusElement": {
-          "!type": "fn() -> DOMElement",
-          "!doc": "Add a DOM element to indicate the progress and return the DOMElement"
         }
       },
       "!doc": "A loader for loading objects in JSON format.",
-      "!type": "fn(showStatus: bool)"
+      "!type": "fn()"
     },
     "Loader": {
       "!url": "http://threejs.org/docs/#Reference/loaders/Loader",
       "prototype": {
-        "showStatus": {
-          "!type": "bool",
-          "!doc": "If true, show loading status in the statusDomElement."
-        },
-        "statusDomElement": {
-          "!type": "DOMElement",
-          "!doc": "This is the recipient of status messages."
-        },
         "onLoadStart": {
           "!type": "function",
           "!doc": "The default is a function with empty body."
@@ -2530,14 +2342,10 @@
         "extractUrlBase": {
           "!type": "fn(url: string) -> string",
           "!doc": "Extract the base from the URL."
-        },
-        "addStatusElement": {
-          "!type": "fn() -> DOMElement",
-          "!doc": "Add a DOM element to indicate the progress and return the DOMElement"
         }
       },
       "!doc": "Base class for implementing loaders.",
-      "!type": "fn(showStatus: bool)"
+      "!type": "fn()"
     },
     "LoadingManager": {
       "!url": "http://threejs.org/docs/#Reference/loaders/LoadingManager",
@@ -2705,8 +2513,8 @@
       "!doc": "Class for loading a [page:Texture texture].",
       "!type": "fn(manager: +THREE.LoadingManager)"
     },
-    "XHRLoader": {
-      "!url": "http://threejs.org/docs/#Reference/loaders/XHRLoader",
+    "FileLoader": {
+      "!url": "http://threejs.org/docs/#Reference/loaders/FileLoader",
       "prototype": {
         "cache": {
           "!type": "+THREE.Cache",
@@ -2736,8 +2544,8 @@
       "!doc": "A low level class for loading resources with XmlHttpRequest, used internaly by most loaders.",
       "!type": "fn(manager: +THREE.LoadingManager)"
     },
-    "glTFLoader": {
-      "!url": "http://threejs.org/docs/#Reference/loaders/glTFLoader",
+    "GLTFLoader": {
+      "!url": "http://threejs.org/docs/#Reference/loaders/GLTFLoader",
       "prototype": {
         "!proto": "THREE.Loader.prototype",
         "load": {
@@ -2999,8 +2807,8 @@
       "!doc": "A material for drawing geometry by depth. Depth is based off of the camera near and far plane. White is nearest, black is farthest.",
       "!type": "fn(parameters: object)"
     },
-    "MeshFaceMaterial": {
-      "!url": "http://threejs.org/docs/#Reference/materials/MeshFaceMaterial",
+    "MultiMaterial": {
+      "!url": "http://threejs.org/docs/#Reference/materials/MultiMaterial",
       "prototype": {
         "materials": {
           "!type": "[]",
@@ -4873,7 +4681,7 @@
         },
         "reflect": {
           "!type": "fn(normal: +THREE.Vector3) -> +THREE.Vector3",
-          "!doc": "Reflect incident vector off of plane orthogonal to normal. normal is assumed to have unit length."
+          "!doc": "Reflect incident vector off of plane orthogonal to normal. Normal is assumed to have unit length."
         },
         "fromArray": {
           "!type": "fn(array: []) -> +THREE.Vector3",
@@ -4881,7 +4689,7 @@
         },
         "multiply": {
           "!type": "fn(v: +THREE.Vector3) -> +THREE.Vector3",
-          "!doc": "Multipies this vector by vector v."
+          "!doc": "Multiplies this vector by vector v."
         },
         "applyProjection": {
           "!type": "fn(m: +THREE.Matrix4) -> +THREE.Vector3",
@@ -4893,7 +4701,7 @@
         },
         "applyEuler": {
           "!type": "fn(euler: +THREE.Euler) -> +THREE.Vector3",
-          "!doc": "Applies euler transform to this vector by converting the [page:Euler] obect to a [page:Quaternion] and applying."
+          "!doc": "Applies euler transform to this vector by converting the [page:Euler] object to a [page:Quaternion] and applying."
         },
         "applyQuaternion": {
           "!type": "fn(quaternion: +THREE.Quaternion) -> +THREE.Vector3",
@@ -5451,10 +5259,6 @@
         "generateMipmaps": {
           "!type": "boolean",
           "!doc": "Whether to generate mipmaps (if possible) for a texture. True by default."
-        },
-        "shareDepthFrom": {
-          "!type": "+THREE.WebGLRenderTarget",
-          "!doc": "Shares the depth from another WebGLRenderTarget. Default is null."
         },
         "setSize": {
           "!type": "fn(width: number, height: number)",

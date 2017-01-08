@@ -19,21 +19,14 @@ THREE.SVGLoader.prototype = {
 
 		var parser = new DOMParser();
 
-		var loader = new THREE.XHRLoader( scope.manager );
-		loader.setCrossOrigin( this.crossOrigin );
+		var loader = new THREE.FileLoader( scope.manager );
 		loader.load( url, function ( svgString ) {
 
 			var doc = parser.parseFromString( svgString, 'image/svg+xml' );  // application/xml
 
-			onLoad( doc.firstChild );
+			onLoad( doc.documentElement );
 
 		}, onProgress, onError );
-
-	},
-
-	setCrossOrigin: function ( value ) {
-
-		this.crossOrigin = value;
 
 	}
 

@@ -16,20 +16,13 @@ THREE.MD2Loader.prototype = {
 
 		var scope = this;
 
-		var loader = new THREE.XHRLoader( scope.manager );
-		loader.setCrossOrigin( this.crossOrigin );
+		var loader = new THREE.FileLoader( scope.manager );
 		loader.setResponseType( 'arraybuffer' );
 		loader.load( url, function ( buffer ) {
 
 			onLoad( scope.parse( buffer ) );
 
 		}, onProgress, onError );
-
-	},
-
-	setCrossOrigin: function ( value ) {
-
-		this.crossOrigin = value;
 
 	},
 
@@ -224,7 +217,10 @@ THREE.MD2Loader.prototype = {
 
 				for ( var j = 0; j < 16; j ++ ) {
 
-					string[ j ] = data.getUint8( offset + j, true );
+					var character = data.getUint8( offset + j, true );
+					if( character === 0 ) break;
+					
+					string[ j ] = character;
 
 				}
 
@@ -302,6 +298,8 @@ THREE.MD2Loader.prototype = {
 
 			}
 
+			geometry.animations = THREE.AnimationClip.CreateClipsFromMorphTargetSequences( geometry.morphTargets, 10 )
+
 			console.timeEnd( 'MD2Loader' );
 
 			return geometry;
@@ -310,4 +308,4 @@ THREE.MD2Loader.prototype = {
 
 	} )()
 
-}
+};
